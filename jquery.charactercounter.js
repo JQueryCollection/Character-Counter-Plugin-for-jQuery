@@ -27,7 +27,7 @@
             $(this).on("blur", function() {
                 $('.ccinput-counter',$(this).parent()).css('visibility','hidden');
             });
-            $(this).on("keyup", function() {
+            $(this).on("keypress", function() {
                 countString($(this));
             });
             function countString(src) {
