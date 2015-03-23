@@ -14,10 +14,11 @@
             ccinputWidth = $(this).innerWidth();
             ccinputHeight = $(this).innerHeight();
             ccinputPos = $(this).position();
-            $(this).parent().append('<div class="ccinput-counter" style="position:absolute; visibility: hidden; color:#999; z-index:911; text-align: right; top:'+ccinputPos.top+'px; height:'+ccinputHeight+'px; line-height:'+ccinputLineHeight+'px;">'+limit+'</div>');
-            ccinputEl = $('.ccinput-counter',$(this).parent());
+            $(this).parent().append('<div class="ccinput-counter" style="position:absolute; visibility: hidden; color:#000; z-index:911; text-align: right; top:'+ccinputPos.top+'px; height:'+ccinputHeight+'px; line-height:'+ccinputLineHeight+'px;">'+limit+'</div>');
+            var ccinputEl = $('.ccinput-counter',$(this).parent());
             ccinputElWidth = ccinputEl.innerWidth();
             ccinputEl.css('width',ccinputElWidth+'px');
+            ccinputEl.css('opacity',0);
             ccinputPosLeft = ccinputWidth-5-ccinputElWidth;
             ccinputEl.css('left', ccinputPosLeft+'px');
             $(this).on("focus", function() {
@@ -35,7 +36,9 @@
                     src.val(src.val().substr(0, limit));
                     chars = limit;
                 }
-                console.log(((chars / limit)));
+                ccinputPercent = parseFloat((chars / limit));
+                ccinputPercent = ccinputPercent.toFixed(2);
+                ccinputEl.css('opacity',ccinputPercent);
                 $('.ccinput-counter', src.parent()).text(limit - chars);
             }
         }
