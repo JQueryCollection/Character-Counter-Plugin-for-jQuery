@@ -4,6 +4,9 @@ The jQuery Character Counter Plugin is simple character counter for your forms.
 
 ![alt tag](https://raw.githubusercontent.com/kokulusilgi/Character-Counter-Plugin-for-jQuery/master/character-counter-plugin-jquery.png)
 
+## Demo
+http://kokulusilgi.com/jquery-character-counter/
+
 ## Getting Started
 
 Add jquery.charactercounter.js to your project.
